@@ -48,6 +48,7 @@ Array(200).fill().forEach(addStar)
 const spaceTexture = new THREE.TextureLoader().load('space.png')
 scene.background = spaceTexture
 
+
 function animate() {
   requestAnimationFrame(animate);
   torus.rotation.x += 0.01;
@@ -65,4 +66,15 @@ const catImage = new THREE.Mesh(
 
 )
 scene.add(catImage)
+
+const moonTexture = new THREE.TextureLoader().load('moon.jpeg')
+
+const moon = new THREE.Mesh(
+
+  new THREE.SphereGeometry(3,32,32)
+)
+
+
 animate();
+
+
