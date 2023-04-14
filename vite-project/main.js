@@ -45,6 +45,8 @@ function addStar(){
 }
 
 Array(200).fill().forEach(addStar)
+const spaceTexture = new THREE.TextureLoader().load('space.png')
+scene.background = spaceTexture
 
 function animate() {
   requestAnimationFrame(animate);
@@ -55,4 +57,12 @@ function animate() {
   renderer.render(scene, camera);
 }
 
+
+const catBurgerTexture = new THREE.TextureLoader().load('cat-and-burger.png')
+const catImage = new THREE.Mesh(
+  new THREE.BoxGeometry(3,3,3),
+  new THREE.MeshBasicMaterial({map: catBurgerTexture})
+
+)
+scene.add(catImage)
 animate();
